@@ -25,3 +25,8 @@ func _on_PlayButton_pressed():
 func _on_TestButton_pressed():
 	get_tree().change_scene("res://View/Scenes/PlaygroundScreen.tscn")
 	pass # Replace with function body.
+
+
+func _on_Settings_pressed():
+	get_tree().change_scene("res://View/Scenes/SettingsScreen.tscn")
+	pass # Replace with function body.
