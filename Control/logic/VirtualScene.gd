@@ -19,3 +19,30 @@ func _ready():
 func _on_Button_pressed():
 	get_tree().change_scene("res://View/Scenes/MainScreen.tscn")
 	pass # Replace with function body.
+
+
+func _on_Penguin_mouse_entered():
+	$Control/TextContainer/TextEdit.text = "Penguin: Am blushing~"
+	var animated = $Control/Character/Penguin/Animation
+	$Control/Character/Penguin/Animation.play("default")
+	pass # Replace with function body.
+
+
+func _on_Penguin_mouse_exited():
+	var animated = $Control/Character/Penguin/Animation
+	animated.stop()
+	pass # Replace with function body.
+
+
+func _on_Listen_pressed():
+	$Control/TextContainer/TextEdit.text = "Penguin: Am blushing~"
+	var animated = $Control/Character/Penguin/Animation
+	animated.play("blushing")
+	pass # Replace with function body.
+
+
+func _on_Animation_animation_finished():
+	$Control/TextContainer/TextEdit.text = "Penguin: Talk to me!"
+	var animated = $Control/Character/Penguin/Animation
+	animated.play("default")
+	pass # Replace with function body.
