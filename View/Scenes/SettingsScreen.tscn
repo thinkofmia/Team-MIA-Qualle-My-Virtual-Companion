@@ -48,6 +48,11 @@ margin_left = 364.0
 margin_right = 393.0
 margin_bottom = 60.0
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="3"]
+margin_top = 146.0
+margin_right = 393.0
+margin_bottom = 146.0
+
 [node name="Header" parent="." index="1" instance=ExtResource( 5 )]
 margin_top = 20.0
 text = "SETTINGS"
