@@ -7,8 +7,15 @@
 [node name="TemplateScreen" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
-[node name="BackButton" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="0" instance=ExtResource( 2 )]
-margin_top = 0.0
+[node name="TextDetected" type="RichTextLabel" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="0"]
 margin_right = 364.0
-margin_bottom = 60.0
+margin_bottom = 30.0
+text = "Text to speech:
+Detected Text"
+fit_content_height = true
+
+[node name="BackButton" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="1" instance=ExtResource( 2 )]
+margin_top = 34.0
+margin_right = 364.0
+margin_bottom = 94.0
 [connection signal="pressed" from="Background/ScreenContainer/MarginContainer/MarginContainer/Options/BackButton" to="." method="_on_BackButton_pressed"]
