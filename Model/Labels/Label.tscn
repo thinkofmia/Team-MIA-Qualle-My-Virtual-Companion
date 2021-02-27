@@ -3,7 +3,6 @@
 [ext_resource path="res://Xolonium-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Control/others/Label.gd" type="Script" id=2]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 48
 font_data = ExtResource( 1 )

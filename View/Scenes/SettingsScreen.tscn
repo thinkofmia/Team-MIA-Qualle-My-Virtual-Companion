@@ -16,11 +16,9 @@ script = ExtResource( 3 )
 margin_right = 493.0
 
 [node name="ColorRect" parent="Background/ScreenContainer/MarginContainer" index="0"]
-margin_left = 50.0
 margin_right = 443.0
 
 [node name="MarginContainer" parent="Background/ScreenContainer/MarginContainer" index="1"]
-margin_left = 50.0
 margin_right = 443.0
 
 [node name="Options" parent="Background/ScreenContainer/MarginContainer/MarginContainer" index="0"]

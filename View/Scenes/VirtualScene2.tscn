@@ -2,6 +2,7 @@
 
 [ext_resource path="res://textures/pingvin/pingvin-blush-2.png" type="Texture" id=1]
 [ext_resource path="res://Model/Labels/Back.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Model/Labels/Greet.tscn" type="PackedScene" id=3]
 [ext_resource path="res://textures/pingvin/pingvin-blush-1.png" type="Texture" id=4]
 [ext_resource path="res://textures/pingvin/pingvin-blush-0.png" type="Texture" id=5]
 [ext_resource path="res://textures/pingvin/pingvin-stand-0.png" type="Texture" id=6]
@@ -25,8 +26,6 @@ animations = [ {
 "name": "blush",
 "speed": 5.0
 } ]
-
-[sub_resource type="AudioStreamMicrophone" id=3]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -57,16 +56,22 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_right = 360.0
+margin_right = 724.0
 margin_bottom = 60.0
 
 [node name="TopButtons" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_right = 360.0
+margin_right = 724.0
 margin_bottom = 60.0
 
 [node name="Back" parent="MarginContainer/VBoxContainer/TopButtons" instance=ExtResource( 2 )]
 margin_top = 0.0
 margin_right = 360.0
+margin_bottom = 60.0
+
+[node name="Greet" parent="MarginContainer/VBoxContainer/TopButtons" instance=ExtResource( 3 )]
+margin_left = 364.0
+margin_top = 0.0
+margin_right = 724.0
 margin_bottom = 60.0
 
 [node name="Control" type="Control" parent="."]
@@ -112,16 +117,8 @@ margin_right = 298.0
 margin_bottom = 83.0
 text = "DeiDi0Z has fed Pingvin 
 a Cherry Berry two hours ago!"
-
-[node name="AudioStreamRecord" type="AudioStreamPlayer" parent="."]
-stream = SubResource( 3 )
-volume_db = 24.0
-bus = "Record"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = 24.0
-mix_target = 2
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TopButtons/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TopButtons/Greet" to="." method="_on_Greet_pressed"]
 [connection signal="mouse_entered" from="Control/Character/Pingvin" to="." method="_on_Penguin_mouse_entered"]
 [connection signal="mouse_exited" from="Control/Character/Pingvin" to="." method="_on_Penguin_mouse_exited"]
 [connection signal="animation_finished" from="Control/Character/Pingvin/Animation" to="." method="_on_Animation_animation_finished"]
