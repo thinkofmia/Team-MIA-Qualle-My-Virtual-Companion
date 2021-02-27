@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/background.png-d849f20f0d2129e1d06a7e7a391e1832.stex"
+path="res://.import/Stand-2.png-6f505f13bdb8e46ea6f090abbb907c35.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/boss/background.png"
-dest_files=[ "res://.import/background.png-d849f20f0d2129e1d06a7e7a391e1832.stex" ]
+source_file="res://textures/penguin/Stand-2.png"
+dest_files=[ "res://.import/Stand-2.png-6f505f13bdb8e46ea6f090abbb907c35.stex" ]
 
 [params]
 
