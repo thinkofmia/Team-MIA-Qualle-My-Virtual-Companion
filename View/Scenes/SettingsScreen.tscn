@@ -1,24 +1,52 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://View/Scenes/template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Model/Labels/Settings.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Control/others/SettingsScreen.gd" type="Script" id=3]
 [ext_resource path="res://Model/buttons/BackButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Model/Labels/Header.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Model/Labels/LabelFontSize.tscn" type="PackedScene" id=6]
 
 [node name="SettingsScreen" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
+[node name="MarginContainer" parent="Background/ScreenContainer" index="0"]
+margin_right = 493.0
+
+[node name="ColorRect" parent="Background/ScreenContainer/MarginContainer" index="0"]
+margin_right = 443.0
+
+[node name="MarginContainer" parent="Background/ScreenContainer/MarginContainer" index="1"]
+margin_right = 443.0
+
+[node name="Options" parent="Background/ScreenContainer/MarginContainer/MarginContainer" index="0"]
+margin_right = 393.0
+
 [node name="BackButton" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="0" instance=ExtResource( 4 )]
 margin_left = 0.0
 margin_top = 0.0
-margin_right = 364.0
+margin_right = 393.0
 margin_bottom = 14.0
 
 [node name="Button" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="1" instance=ExtResource( 2 )]
 margin_top = 18.0
-margin_right = 364.0
+margin_right = 393.0
 margin_bottom = 78.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="2"]
+margin_top = 82.0
+margin_right = 393.0
+margin_bottom = 142.0
+
+[node name="Button" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/HBoxContainer" index="0" instance=ExtResource( 6 )]
+margin_top = 0.0
+margin_right = 360.0
+margin_bottom = 60.0
+
+[node name="OptionButton" type="OptionButton" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/HBoxContainer" index="1"]
+margin_left = 364.0
+margin_right = 393.0
+margin_bottom = 60.0
 
 [node name="Header" parent="." index="1" instance=ExtResource( 5 )]
 margin_top = 20.0
