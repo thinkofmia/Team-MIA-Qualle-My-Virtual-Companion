@@ -18,9 +18,11 @@ script = ExtResource( 5 )
 margin_right = 539.0
 
 [node name="ColorRect" parent="Background/ScreenContainer/MarginContainer" index="0"]
-margin_right = 489.0
+margin_left = 25.0
+margin_right = 425.0
 
 [node name="MarginContainer" parent="Background/ScreenContainer/MarginContainer" index="1"]
+margin_left = 50.0
 margin_right = 489.0
 
 [node name="Options" parent="Background/ScreenContainer/MarginContainer/MarginContainer" index="0"]
@@ -37,7 +39,6 @@ margin_top = 90.0
 margin_right = 439.0
 margin_bottom = 395.0
 custom_constants/separation = 40
-alignment = 1
 
 [node name="Friend" type="HBoxContainer" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList" index="0"]
 margin_right = 439.0
@@ -45,7 +46,7 @@ margin_bottom = 75.0
 
 [node name="DeadlyDino" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend" index="0" instance=ExtResource( 3 )]
 
-[node name="Button" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend" index="1" instance=ExtResource( 8 )]
+[node name="FriendLabel" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend" index="1" instance=ExtResource( 8 )]
 margin_left = 79.0
 margin_top = 0.0
 margin_right = 439.0
@@ -58,7 +59,7 @@ margin_bottom = 190.0
 
 [node name="CharacterIcon" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend2" index="0" instance=ExtResource( 6 )]
 
-[node name="Button" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend2" index="1" instance=ExtResource( 9 )]
+[node name="FriendLabel" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend2" index="1" instance=ExtResource( 9 )]
 margin_left = 79.0
 margin_top = 0.0
 margin_right = 439.0
@@ -71,7 +72,7 @@ margin_bottom = 305.0
 
 [node name="RRIcon" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend3" index="0" instance=ExtResource( 7 )]
 
-[node name="Button" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend3" index="1" instance=ExtResource( 10 )]
+[node name="FriendLabel" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend3" index="1" instance=ExtResource( 10 )]
 margin_left = 79.0
 margin_top = 0.0
 margin_right = 439.0
@@ -81,4 +82,7 @@ margin_bottom = 75.0
 margin_top = 425.0
 margin_right = 439.0
 margin_bottom = 485.0
+[connection signal="pressed" from="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend/FriendLabel" to="." method="_on_FriendLabel_pressed"]
+[connection signal="pressed" from="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend2/FriendLabel" to="." method="_on_FriendLabel_pressed"]
+[connection signal="pressed" from="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend3/FriendLabel" to="." method="_on_FriendLabel_pressed"]
 [connection signal="pressed" from="Background/ScreenContainer/MarginContainer/MarginContainer/Options/Back" to="." method="_on_Back_pressed"]

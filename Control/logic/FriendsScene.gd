@@ -19,3 +19,8 @@ func _ready():
 func _on_Back_pressed():
 	get_tree().change_scene("res://View/Scenes/MainScreen.tscn")
 	pass # Replace with function body.
+
+
+func _on_FriendLabel_pressed():
+	get_tree().change_scene("res://View/Scenes/VirtualScene2.tscn")
+	pass # Replace with function body.

@@ -95,6 +95,7 @@ shape = SubResource( 1 )
 
 [node name="Animation" type="AnimatedSprite" parent="Control/Character/Pingvin"]
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [node name="TextContainer" type="MarginContainer" parent="Control"]
@@ -109,7 +110,7 @@ __meta__ = {
 [node name="TextEdit" type="TextEdit" parent="Control/TextContainer"]
 margin_right = 298.0
 margin_bottom = 83.0
-text = "DeliDino0Z has fed Pingvin 
+text = "DeiDi0Z has fed Pingvin 
 a Cherry Berry two hours ago!"
 
 [node name="AudioStreamRecord" type="AudioStreamPlayer" parent="."]
