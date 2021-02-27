@@ -101,7 +101,7 @@ shape = SubResource( 1 )
 
 [node name="Animation" type="AnimatedSprite" parent="Control/Character/Penguin"]
 frames = SubResource( 2 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="TextContainer" type="MarginContainer" parent="Control"]
