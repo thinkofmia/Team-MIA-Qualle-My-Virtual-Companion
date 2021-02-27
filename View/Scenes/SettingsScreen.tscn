@@ -23,12 +23,12 @@ margin_right = 443.0
 [node name="Options" parent="Background/ScreenContainer/MarginContainer/MarginContainer" index="0"]
 margin_right = 393.0
 
-[node name="Button2" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="0" instance=ExtResource( 4 )]
+[node name="Back" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="0" instance=ExtResource( 4 )]
 margin_top = 0.0
 margin_right = 393.0
 margin_bottom = 60.0
 
-[node name="Button" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="1" instance=ExtResource( 2 )]
+[node name="Settings" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="1" instance=ExtResource( 2 )]
 margin_top = 64.0
 margin_right = 393.0
 margin_bottom = 124.0
@@ -66,3 +66,4 @@ margin_bottom = 60.0
 [node name="Header" parent="." index="1" instance=ExtResource( 5 )]
 margin_top = 20.0
 text = "SETTINGS"
+[connection signal="pressed" from="Background/ScreenContainer/MarginContainer/MarginContainer/Options/Back" to="." method="_on_Back_pressed"]

@@ -18,6 +18,10 @@ func _on_FadeIn_fade_finished():
 	get_tree().change_scene("res://View/Others/OthersSelection.tscn")
 
 
-func _on_BackButton_pressed():
+#func _on_BackButton_pressed():
+#	get_tree().change_scene("res://View/Scenes/MainScreen.tscn")
+#	pass # Replace with function body.
+
+func _on_Back_pressed():
 	get_tree().change_scene("res://View/Scenes/MainScreen.tscn")
 	pass # Replace with function body.
