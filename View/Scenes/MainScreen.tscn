@@ -6,7 +6,7 @@
 [ext_resource path="res://Control/logic/MainScreen.gd" type="Script" id=4]
 [ext_resource path="res://Model/Labels/Add.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Model/Labels/Settings.tscn" type="PackedScene" id=6]
-[ext_resource path="res://View/Scenes/AboutMe.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Model/Labels/About.tscn" type="PackedScene" id=7]
 
 [node name="TemplateScreen" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
@@ -29,15 +29,16 @@ margin_top = 142.0
 margin_right = 364.0
 margin_bottom = 202.0
 
-[node name="LogoutButton" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="3" instance=ExtResource( 3 )]
+[node name="About" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="3" instance=ExtResource( 7 )]
 margin_top = 213.0
 margin_right = 364.0
 margin_bottom = 273.0
 
-[node name="About" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="4" instance=ExtResource( 7 )]
+[node name="LogoutButton" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="4" instance=ExtResource( 3 )]
 margin_top = 284.0
 margin_right = 364.0
 margin_bottom = 344.0
 [connection signal="pressed" from="Background/ScreenContainer/MarginContainer/MarginContainer/Options/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="Background/ScreenContainer/MarginContainer/MarginContainer/Options/TestButton" to="." method="_on_TestButton_pressed"]
 [connection signal="pressed" from="Background/ScreenContainer/MarginContainer/MarginContainer/Options/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="Background/ScreenContainer/MarginContainer/MarginContainer/Options/About" to="." method="_on_About_pressed"]

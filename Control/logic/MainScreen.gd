@@ -30,3 +30,8 @@ func _on_TestButton_pressed():
 func _on_Settings_pressed():
 	get_tree().change_scene("res://View/Scenes/SettingsScreen.tscn")
 	pass # Replace with function body.
+
+
+func _on_About_pressed():
+	get_tree().change_scene("res://View/Scenes/AboutMe.tscn")
+	pass # Replace with function body.
