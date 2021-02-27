@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://textures/night.png" type="Texture" id=1]
 [ext_resource path="res://Model/Labels/Back.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://textures/penguin/Blush-3.png" type="Texture" id=9]
 [ext_resource path="res://textures/penguin/Blush-0.png" type="Texture" id=10]
 [ext_resource path="res://Model/Labels/Listen.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Model/Labels/Play.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 339.754, 354.623 )
@@ -60,7 +61,7 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 margin_right = 724.0
-margin_bottom = 60.0
+margin_bottom = 124.0
 
 [node name="TopButtons" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 margin_right = 724.0
@@ -76,6 +77,11 @@ margin_left = 364.0
 margin_top = 0.0
 margin_right = 724.0
 margin_bottom = 60.0
+
+[node name="Play" parent="MarginContainer/VBoxContainer" instance=ExtResource( 12 )]
+margin_top = 64.0
+margin_right = 724.0
+margin_bottom = 124.0
 
 [node name="Control" type="Control" parent="."]
 margin_top = 47.0
@@ -103,7 +109,7 @@ shape = SubResource( 1 )
 
 [node name="Animation" type="AnimatedSprite" parent="Control/Character/Penguin"]
 frames = SubResource( 2 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="TextContainer" type="MarginContainer" parent="Control"]
@@ -130,6 +136,7 @@ volume_db = 24.0
 mix_target = 2
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TopButtons/Back" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TopButtons/Listen" to="." method="_on_Listen_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="mouse_entered" from="Control/Character/Penguin" to="." method="_on_Penguin_mouse_entered"]
 [connection signal="mouse_exited" from="Control/Character/Penguin" to="." method="_on_Penguin_mouse_exited"]
 [connection signal="animation_finished" from="Control/Character/Penguin/Animation" to="." method="_on_Animation_animation_finished"]
