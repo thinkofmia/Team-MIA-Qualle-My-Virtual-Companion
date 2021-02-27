@@ -19,6 +19,10 @@ config/name="Virtual Companion"
 run/main_scene="res://View/Screens_Randy/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/handheld/orientation="portrait"
+
 [global]
 
 singleton=true
