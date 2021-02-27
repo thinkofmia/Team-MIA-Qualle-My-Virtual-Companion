@@ -40,18 +40,18 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="Background/ScreenContainer/MarginContainer"]
-margin_left = 30.0
+margin_left = 50.0
 margin_top = 50.0
-margin_right = 430.0
+margin_right = 414.0
 margin_bottom = 748.0
 color = Color( 0.243137, 0.121569, 0.752941, 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="Background/ScreenContainer/MarginContainer"]
-margin_left = 25.0
+margin_left = 50.0
 margin_top = 50.0
-margin_right = 425.0
+margin_right = 414.0
 margin_bottom = 748.0
 
 [node name="Options" type="VBoxContainer" parent="Background/ScreenContainer/MarginContainer/MarginContainer"]
-margin_right = 400.0
+margin_right = 364.0
 margin_bottom = 698.0
