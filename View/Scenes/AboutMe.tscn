@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://View/Scenes/template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Model/Labels/Back.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Model/Labels/About.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Model/Labels/Name.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Model/Labels/Address.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Model/Labels/Edit.tscn" type="PackedScene" id=6]
 
 [node name="TemplateScreen" instance=ExtResource( 1 )]
 
@@ -15,3 +18,41 @@ margin_bottom = 60.0
 margin_top = 64.0
 margin_right = 364.0
 margin_bottom = 124.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="2"]
+margin_top = 128.0
+margin_right = 364.0
+margin_bottom = 188.0
+
+[node name="Name" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/HBoxContainer" index="0" instance=ExtResource( 4 )]
+margin_top = 0.0
+margin_right = 360.0
+margin_bottom = 60.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/HBoxContainer" index="1"]
+margin_left = 364.0
+margin_right = 364.0
+margin_bottom = 60.0
+custom_colors/default_color = Color( 0.94902, 0.898039, 0.898039, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+text = "John Tan"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="3"]
+margin_top = 192.0
+margin_right = 364.0
+margin_bottom = 252.0
+
+[node name="Address" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/HBoxContainer2" index="0" instance=ExtResource( 5 )]
+margin_top = 0.0
+margin_right = 360.0
+margin_bottom = 60.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/HBoxContainer2" index="1"]
+margin_left = 364.0
+margin_right = 364.0
+margin_bottom = 60.0
+
+[node name="Button3" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="4" instance=ExtResource( 6 )]
+margin_top = 256.0
+margin_right = 364.0
+margin_bottom = 316.0
