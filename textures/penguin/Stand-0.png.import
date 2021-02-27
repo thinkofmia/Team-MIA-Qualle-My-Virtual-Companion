@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Lava.png-f7119d4834740f7d782a07731073ee06.stex"
+path="res://.import/Stand-0.png-9d80688087790ea2c09d3528ed9a0f85.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/boss/Lava.png"
-dest_files=[ "res://.import/Lava.png-f7119d4834740f7d782a07731073ee06.stex" ]
+source_file="res://textures/penguin/Stand-0.png"
+dest_files=[ "res://.import/Stand-0.png-9d80688087790ea2c09d3528ed9a0f85.stex" ]
 
 [params]
 
