@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://View/Scenes/template.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Control/randy_scripts/SettingsScreen.gd" type="Script" id=3]
+[ext_resource path="res://Model/Labels/Header.tscn" type="PackedScene" id=5]
+
+[node name="SettingsScreen" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="VBoxContainer" parent="Background/ScreenContainer/MarginContainer" index="1"]
+margin_top = 50.0
+margin_bottom = 937.0
+
+[node name="Header" parent="." index="1" instance=ExtResource( 5 )]
+margin_top = 20.0
+text = "SETTINGS"

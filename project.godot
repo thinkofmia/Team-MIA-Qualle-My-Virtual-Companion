@@ -16,11 +16,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Virtual Companion"
-run/main_scene="res://View/Screens_Randy/MainMenu.tscn"
+run/main_scene="res://View/Scenes/MainScreen.tscn"
 config/icon="res://icon.png"
 
 [display]
 
+window/size/width=350
+window/size/resizable=false
+window/size/always_on_top=true
 window/handheld/orientation="portrait"
 
 [global]
