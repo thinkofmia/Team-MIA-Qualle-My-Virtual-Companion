@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://textures/night.png" type="Texture" id=1]
 [ext_resource path="res://Model/Labels/Back.tscn" type="PackedScene" id=2]
@@ -6,12 +6,21 @@
 [ext_resource path="res://textures/penguin/Stand-0.png" type="Texture" id=4]
 [ext_resource path="res://textures/penguin/Stand-2.png" type="Texture" id=5]
 [ext_resource path="res://textures/penguin/Stand-1.png" type="Texture" id=6]
+[ext_resource path="res://textures/penguin/Blush-1.png" type="Texture" id=7]
+[ext_resource path="res://textures/penguin/Blush-2.png" type="Texture" id=8]
+[ext_resource path="res://textures/penguin/Blush-3.png" type="Texture" id=9]
+[ext_resource path="res://textures/penguin/Blush-0.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "blushing",
 "speed": 5.0
 } ]
 
@@ -62,10 +71,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Control/Character"]
+[node name="Penguin" type="AnimatedSprite" parent="Control/Character"]
 position = Vector2( 680.357, 786.191 )
 frames = SubResource( 1 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="TextContainer" type="MarginContainer" parent="Control"]
