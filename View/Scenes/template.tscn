@@ -21,7 +21,7 @@ __meta__ = {
 
 [node name="ScreenContainer" type="MarginContainer" parent="Background"]
 margin_left = 2.0
-margin_top = 200.0
+margin_top = 11.0
 margin_right = 466.0
 margin_bottom = 998.0
 __meta__ = {
@@ -30,7 +30,7 @@ __meta__ = {
 
 [node name="MarginContainer" type="MarginContainer" parent="Background/ScreenContainer"]
 margin_right = 464.0
-margin_bottom = 798.0
+margin_bottom = 987.0
 custom_constants/margin_right = 50
 custom_constants/margin_top = 50
 custom_constants/margin_left = 50
@@ -43,15 +43,15 @@ __meta__ = {
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 414.0
-margin_bottom = 748.0
+margin_bottom = 937.0
 color = Color( 0.243137, 0.121569, 0.752941, 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="Background/ScreenContainer/MarginContainer"]
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 414.0
-margin_bottom = 748.0
+margin_bottom = 937.0
 
 [node name="Options" type="VBoxContainer" parent="Background/ScreenContainer/MarginContainer/MarginContainer"]
 margin_right = 364.0
-margin_bottom = 698.0
+margin_bottom = 887.0
