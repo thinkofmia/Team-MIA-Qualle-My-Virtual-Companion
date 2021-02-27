@@ -20,3 +20,8 @@ func _ready():
 func _on_PlayButton_pressed():
 	get_tree().change_scene("res://View/Scenes/VirtualScene.tscn")
 	pass # Replace with function body.
+
+
+func _on_Settings_pressed():
+	get_tree().change_scene("res://View/Scenes/SettingsScreen.tscn")
+	pass # Replace with function body.
