@@ -1,0 +1,126 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://textures/pingvin/pingvin-blush-2.png" type="Texture" id=1]
+[ext_resource path="res://Model/Labels/Back.tscn" type="PackedScene" id=2]
+[ext_resource path="res://textures/pingvin/pingvin-blush-1.png" type="Texture" id=4]
+[ext_resource path="res://textures/pingvin/pingvin-blush-0.png" type="Texture" id=5]
+[ext_resource path="res://textures/pingvin/pingvin-stand-0.png" type="Texture" id=6]
+[ext_resource path="res://textures/pingvin/pingvin-stand-1.png" type="Texture" id=7]
+[ext_resource path="res://textures/pingvin/pingvin-stand-2.png" type="Texture" id=8]
+[ext_resource path="res://Control/logic/VirtualScene_Pingvin.gd" type="Script" id=9]
+[ext_resource path="res://textures/night.png" type="Texture" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 339.754, 354.623 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "blush",
+"speed": 5.0
+} ]
+
+[sub_resource type="AudioStreamMicrophone" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -470.0
+margin_top = 2.0
+margin_right = 810.0
+margin_bottom = 722.0
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = -1.0
+margin_top = 4.0
+margin_right = 359.0
+margin_bottom = 64.0
+rect_scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 360.0
+margin_bottom = 60.0
+
+[node name="TopButtons" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 360.0
+margin_bottom = 60.0
+
+[node name="Back" parent="MarginContainer/VBoxContainer/TopButtons" instance=ExtResource( 2 )]
+margin_top = 0.0
+margin_right = 360.0
+margin_bottom = 60.0
+
+[node name="Control" type="Control" parent="."]
+margin_top = 47.0
+margin_right = 352.0
+margin_bottom = 601.0
+
+[node name="Character" type="MarginContainer" parent="Control"]
+margin_top = 164.0
+margin_right = 1384.0
+margin_bottom = 1716.0
+rect_scale = Vector2( 0.25, 0.25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pingvin" type="KinematicBody2D" parent="Control/Character"]
+position = Vector2( 680.357, 786.191 )
+input_pickable = true
+motion/sync_to_physics = true
+
+[node name="Collision" type="CollisionShape2D" parent="Control/Character/Pingvin"]
+use_parent_material = true
+position = Vector2( 50.3967, 0 )
+shape = SubResource( 1 )
+
+[node name="Animation" type="AnimatedSprite" parent="Control/Character/Pingvin"]
+frames = SubResource( 2 )
+playing = true
+
+[node name="TextContainer" type="MarginContainer" parent="Control"]
+margin_left = 29.0
+margin_top = 25.0
+margin_right = 327.0
+margin_bottom = 108.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="Control/TextContainer"]
+margin_right = 298.0
+margin_bottom = 83.0
+text = "DeliDino0Z has fed Pingvin 
+a Cherry Berry two hours ago!"
+
+[node name="AudioStreamRecord" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 3 )
+volume_db = 24.0
+bus = "Record"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = 24.0
+mix_target = 2
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TopButtons/Back" to="." method="_on_Back_pressed"]
+[connection signal="mouse_entered" from="Control/Character/Pingvin" to="." method="_on_Penguin_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Character/Pingvin" to="." method="_on_Penguin_mouse_exited"]
+[connection signal="animation_finished" from="Control/Character/Pingvin/Animation" to="." method="_on_Animation_animation_finished"]
