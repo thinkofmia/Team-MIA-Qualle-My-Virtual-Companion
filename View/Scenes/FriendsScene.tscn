@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://View/Scenes/template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Model/Labels/Friends.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Model/icons/DDIcon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Model/Labels/Back.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Control/logic/FriendsScene.gd" type="Script" id=5]
 
 [node name="TemplateScreen" instance=ExtResource( 1 )]
+script = ExtResource( 5 )
 
 [node name="Label" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="0" instance=ExtResource( 2 )]
 margin_top = 0.0
@@ -13,7 +17,38 @@ margin_bottom = 60.0
 [node name="FriendList" type="VBoxContainer" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="1"]
 margin_top = 64.0
 margin_right = 364.0
-margin_bottom = 64.0
+margin_bottom = 218.0
+alignment = 1
 
 [node name="Friend" type="HBoxContainer" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList" index="0"]
 margin_right = 364.0
+margin_bottom = 75.0
+
+[node name="DeadlyDino" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend" index="0" instance=ExtResource( 3 )]
+
+[node name="DinoStats" type="TextEdit" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend" index="1"]
+margin_left = 79.0
+margin_right = 79.0
+margin_bottom = 75.0
+text = "DelibrateDino
+Sends you a gift"
+
+[node name="Friend2" type="HBoxContainer" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList" index="1"]
+margin_top = 79.0
+margin_right = 364.0
+margin_bottom = 154.0
+
+[node name="DeadlyDino" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend2" index="0" instance=ExtResource( 3 )]
+
+[node name="DinoStats" type="TextEdit" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend2" index="1"]
+margin_left = 79.0
+margin_right = 79.0
+margin_bottom = 75.0
+text = "DelibrateDino
+Sends you a gift"
+
+[node name="Back" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="2" instance=ExtResource( 4 )]
+margin_top = 222.0
+margin_right = 364.0
+margin_bottom = 282.0
+[connection signal="pressed" from="Background/ScreenContainer/MarginContainer/MarginContainer/Options/Back" to="." method="_on_Back_pressed"]
