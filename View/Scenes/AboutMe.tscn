@@ -9,7 +9,7 @@
 
 [node name="TemplateScreen" instance=ExtResource( 1 )]
 
-[node name="Button" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="0" instance=ExtResource( 2 )]
+[node name="Back" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="0" instance=ExtResource( 2 )]
 margin_top = 0.0
 margin_right = 364.0
 margin_bottom = 60.0
@@ -56,3 +56,4 @@ margin_bottom = 60.0
 margin_top = 256.0
 margin_right = 364.0
 margin_bottom = 316.0
+[connection signal="pressed" from="Background/ScreenContainer/MarginContainer/MarginContainer/Options/Back" to="Background/ScreenContainer/MarginContainer/MarginContainer/Options/Back" method="_on_Back_pressed"]
