@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://textures/night.png" type="Texture" id=1]
 [ext_resource path="res://Model/Labels/Back.tscn" type="PackedScene" id=2]
@@ -11,11 +11,12 @@
 [ext_resource path="res://textures/penguin/Blush-3.png" type="Texture" id=9]
 [ext_resource path="res://textures/penguin/Blush-0.png" type="Texture" id=10]
 [ext_resource path="res://Model/Labels/Listen.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Model/Labels/Play.tscn" type="PackedScene" id=12]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 339.754, 354.623 )
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ) ],
 "loop": true,
@@ -27,6 +28,10 @@ animations = [ {
 "name": "blushing",
 "speed": 5.0
 } ]
+
+[sub_resource type="AudioStreamMicrophone" id=3]
+
+[sub_resource type="AudioStreamSample" id=4]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -56,20 +61,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TopButtons" type="HBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 724.0
+margin_bottom = 124.0
+
+[node name="TopButtons" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 margin_right = 724.0
 margin_bottom = 60.0
 
-[node name="Back" parent="MarginContainer/TopButtons" instance=ExtResource( 2 )]
+[node name="Back" parent="MarginContainer/VBoxContainer/TopButtons" instance=ExtResource( 2 )]
 margin_top = 0.0
 margin_right = 360.0
 margin_bottom = 60.0
 
-[node name="Listen" parent="MarginContainer/TopButtons" instance=ExtResource( 11 )]
+[node name="Listen" parent="MarginContainer/VBoxContainer/TopButtons" instance=ExtResource( 11 )]
 margin_left = 364.0
 margin_top = 0.0
 margin_right = 724.0
 margin_bottom = 60.0
+
+[node name="Play" parent="MarginContainer/VBoxContainer" instance=ExtResource( 12 )]
+margin_top = 64.0
+margin_right = 724.0
+margin_bottom = 124.0
 
 [node name="Control" type="Control" parent="."]
 margin_top = 47.0
@@ -93,27 +107,36 @@ motion/sync_to_physics = true
 [node name="Collision" type="CollisionShape2D" parent="Control/Character/Penguin"]
 use_parent_material = true
 position = Vector2( 50.3967, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Animation" type="AnimatedSprite" parent="Control/Character/Penguin"]
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 frame = 2
 playing = true
 
 [node name="TextContainer" type="MarginContainer" parent="Control"]
 margin_left = 29.0
+margin_top = 25.0
 margin_right = 327.0
-margin_bottom = 104.0
+margin_bottom = 108.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextEdit" type="TextEdit" parent="Control/TextContainer"]
 margin_right = 298.0
-margin_bottom = 104.0
+margin_bottom = 83.0
 text = "Penguin: Computer Vision how?"
-[connection signal="pressed" from="MarginContainer/TopButtons/Back" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="MarginContainer/TopButtons/Listen" to="." method="_on_Listen_pressed"]
+
+[node name="AudioStreamRecord" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 3 )
+bus = "Record"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 4 )
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TopButtons/Back" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TopButtons/Listen" to="." method="_on_Listen_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="mouse_entered" from="Control/Character/Penguin" to="." method="_on_Penguin_mouse_entered"]
 [connection signal="mouse_exited" from="Control/Character/Penguin" to="." method="_on_Penguin_mouse_exited"]
 [connection signal="animation_finished" from="Control/Character/Penguin/Animation" to="." method="_on_Animation_animation_finished"]
