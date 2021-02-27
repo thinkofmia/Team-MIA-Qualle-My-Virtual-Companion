@@ -1,13 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://View/Scenes/template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Model/Labels/Play.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Model/Labels/Exit.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Control/logic/MainScreen.gd" type="Script" id=4]
 [ext_resource path="res://Model/Labels/Add.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Model/Labels/Settings.tscn" type="PackedScene" id=6]
+[ext_resource path="res://View/Scenes/AboutMe.tscn" type="PackedScene" id=7]
 
 [node name="TemplateScreen" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
+
+[node name="Options" parent="Background/ScreenContainer/MarginContainer/MarginContainer" index="0"]
+custom_constants/separation = 11
 
 [node name="PlayButton" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="0" instance=ExtResource( 2 )]
 margin_top = 0.0
@@ -15,13 +20,24 @@ margin_right = 364.0
 margin_bottom = 60.0
 
 [node name="TestButton" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="1" instance=ExtResource( 5 )]
-margin_top = 64.0
+margin_top = 71.0
 margin_right = 364.0
-margin_bottom = 124.0
+margin_bottom = 131.0
 
-[node name="LogoutButton" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="2" instance=ExtResource( 3 )]
-margin_top = 128.0
+[node name="Settings" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="2" instance=ExtResource( 6 )]
+margin_top = 142.0
 margin_right = 364.0
-margin_bottom = 188.0
+margin_bottom = 202.0
+
+[node name="LogoutButton" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="3" instance=ExtResource( 3 )]
+margin_top = 213.0
+margin_right = 364.0
+margin_bottom = 273.0
+
+[node name="About" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="4" instance=ExtResource( 7 )]
+margin_top = 284.0
+margin_right = 364.0
+margin_bottom = 344.0
 [connection signal="pressed" from="Background/ScreenContainer/MarginContainer/MarginContainer/Options/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="Background/ScreenContainer/MarginContainer/MarginContainer/Options/TestButton" to="." method="_on_TestButton_pressed"]
+[connection signal="pressed" from="Background/ScreenContainer/MarginContainer/MarginContainer/Options/Settings" to="." method="_on_Settings_pressed"]
