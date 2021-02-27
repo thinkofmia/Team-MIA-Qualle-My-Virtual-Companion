@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://View/Scenes/template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Model/Labels/Settings.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Control/others/SettingsScreen.gd" type="Script" id=3]
+[ext_resource path="res://Model/buttons/BackButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Model/Labels/Header.tscn" type="PackedScene" id=5]
 
 [node name="SettingsScreen" instance=ExtResource( 1 )]
@@ -20,11 +21,20 @@ margin_right = 410.0
 [node name="Options" parent="Background/ScreenContainer/MarginContainer/MarginContainer" index="0"]
 margin_right = 360.0
 
-[node name="Button" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="0" instance=ExtResource( 2 )]
+[node name="BackButton" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="0" instance=ExtResource( 4 )]
+margin_left = 0.0
 margin_top = 0.0
 margin_right = 360.0
-margin_bottom = 60.0
+margin_bottom = 14.0
+
+[node name="Settings" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="1" instance=ExtResource( 2 )]
+anchor_left = 0.0777778
+anchor_right = 0.0777778
+margin_top = 18.0
+margin_right = 360.0
+margin_bottom = 78.0
 
 [node name="Header" parent="." index="1" instance=ExtResource( 5 )]
 margin_top = 20.0
 text = "SETTINGS"
+[connection signal="pressed" from="Background/ScreenContainer/MarginContainer/MarginContainer/Options/BackButton" to="." method="_on_BackButton_pressed"]
