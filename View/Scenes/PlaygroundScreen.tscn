@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://View/Scenes/template.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Model/Labels/Back.tscn" type="PackedScene" id=2]
+[ext_resource path="res://View/Scenes/ForTesting.gd" type="Script" id=3]
+
+[node name="TemplateScreen" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="BackButton" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="0" instance=ExtResource( 2 )]
+margin_top = 0.0
+margin_right = 364.0
+margin_bottom = 60.0
+[connection signal="pressed" from="Background/ScreenContainer/MarginContainer/MarginContainer/Options/BackButton" to="." method="_on_BackButton_pressed"]

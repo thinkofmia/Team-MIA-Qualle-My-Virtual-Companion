@@ -8,7 +8,6 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	pass # Replace with function body.
 
 
@@ -17,11 +16,7 @@ func _ready():
 #	pass
 
 
-func _on_PlayButton_pressed():
-	get_tree().change_scene("res://View/Scenes/VirtualScene.tscn")
-	pass # Replace with function body.
 
-
-func _on_TestButton_pressed():
-	get_tree().change_scene("res://View/Scenes/PlaygroundScreen.tscn")
+func _on_BackButton_pressed():
+	get_tree().change_scene("res://View/Scenes/MainScreen.tscn")
 	pass # Replace with function body.
