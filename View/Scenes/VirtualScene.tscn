@@ -101,7 +101,6 @@ shape = SubResource( 1 )
 
 [node name="Animation" type="AnimatedSprite" parent="Control/Character/Penguin"]
 frames = SubResource( 2 )
-frame = 2
 playing = true
 
 [node name="TextContainer" type="MarginContainer" parent="Control"]
@@ -116,7 +115,7 @@ __meta__ = {
 [node name="TextEdit" type="TextEdit" parent="Control/TextContainer"]
 margin_right = 298.0
 margin_bottom = 83.0
-text = "Penguin: Computer Vision how?"
+text = "Pongoon: Computer Vision how?"
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TopButtons/Back" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TopButtons/Listen" to="." method="_on_Listen_pressed"]
 [connection signal="mouse_entered" from="Control/Character/Penguin" to="." method="_on_Penguin_mouse_entered"]

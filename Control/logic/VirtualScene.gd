@@ -3,6 +3,8 @@ extends Control
 # Variables
 var effect
 var recording
+var speech
+var animated
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,6 +13,8 @@ func _ready():
 	# And use it to retrieve its first effect, which has been defined
 	# as an "AudioEffectRecord" resource.
 	effect = AudioServer.get_bus_effect(idx, 0)
+	speech  = $Control/TextContainer/TextEdit
+	animated = $Control/Character/Penguin/Animation
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,21 +27,18 @@ func _on_Button_pressed():
 
 
 func _on_Penguin_mouse_entered():
-	$Control/TextContainer/TextEdit.text = "Penguin: Am blushing~"
-	var animated = $Control/Character/Penguin/Animation
-	$Control/Character/Penguin/Animation.play("default")
+	speech.text = "Pongoon: Am blushing~"
+	animated.play("default")
 	pass # Replace with function body.
 
 
 func _on_Penguin_mouse_exited():
-	var animated = $Control/Character/Penguin/Animation
 	animated.stop()
 	pass # Replace with function body.
 
 
 func _on_Listen_pressed():
-	$Control/TextContainer/TextEdit.text = "Penguin: Am blushing~"
-	var animated = $Control/Character/Penguin/Animation
+	speech.text = "Pongoon: Am blushing~"
 	animated.play("blushing")
 	#For recording sounds
 	if effect.is_recording_active():
@@ -51,23 +52,7 @@ func _on_Listen_pressed():
 
 
 func _on_Animation_animation_finished():
-	$Control/TextContainer/TextEdit.text = "Penguin: Talk to me!"
+	speech.text = "Pongoon: Talk to me!"
 	var animated = $Control/Character/Penguin/Animation
 	animated.play("default")
-	pass # Replace with function body.
-
-
-func _on_Play_pressed():
-	print(recording)
-	print(recording.format)
-	print(recording.mix_rate)
-	print(recording.stereo)
-	var data = recording.get_data()
-	print(data)
-	print(data.size())
-	$AudioStreamPlayer.stream = recording
-	$AudioStreamPlayer.play()
-	$Control/TextContainer/TextEdit.text = "Penguin: Am blushing~"
-	var animated = $Control/Character/Penguin/Animation
-	animated.play("blushing")
 	pass # Replace with function body.

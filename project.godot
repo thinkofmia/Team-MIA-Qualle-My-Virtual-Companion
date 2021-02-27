@@ -17,7 +17,8 @@ _global_script_class_icons={
 
 config/name="Virtual Companion"
 run/main_scene="res://View/Scenes/MainScreen.tscn"
-config/icon="res://icon.png"
+config/icon="res://textures/virtual companion.JPG"
+config/windows_native_icon="res://textures/virtual companion.ico"
 
 [display]
 
