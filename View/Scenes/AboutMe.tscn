@@ -33,16 +33,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/Address/Control" index="0"]
-margin_right = 313.0
-margin_bottom = 268.0
-rect_scale = Vector2( 1, 6 )
-text = "Hi! I am Mary Lu. I live in the Pioneer MRT street 21. Please take me there if I ever show this to you, as I am unable to find my way."
-fit_content_height = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Edit" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="3" instance=ExtResource( 6 )]
 margin_top = 192.0
 margin_right = 364.0

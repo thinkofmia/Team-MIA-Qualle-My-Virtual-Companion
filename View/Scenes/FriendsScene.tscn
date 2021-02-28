@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://View/Scenes/template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Model/Labels/Friends.tscn" type="PackedScene" id=2]
@@ -10,76 +10,90 @@
 [ext_resource path="res://Model/Labels/DeliDino0Z.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Model/Labels/FlutterFox8.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Model/Labels/RavinRabbit99.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Model/buttons/AddButton.tscn" type="PackedScene" id=11]
 
 [node name="TemplateScreen" instance=ExtResource( 1 )]
 script = ExtResource( 5 )
 
 [node name="MarginContainer" parent="Background/ScreenContainer" index="0"]
-margin_right = 539.0
+margin_right = 485.0
 
 [node name="ColorRect" parent="Background/ScreenContainer/MarginContainer" index="0"]
-margin_right = 489.0
+margin_right = 435.0
 
 [node name="MarginContainer" parent="Background/ScreenContainer/MarginContainer" index="1"]
-margin_right = 489.0
+margin_right = 435.0
 
 [node name="Options" parent="Background/ScreenContainer/MarginContainer/MarginContainer" index="0"]
-margin_right = 439.0
+margin_right = 385.0
 custom_constants/separation = 30
 
 [node name="Label" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="0" instance=ExtResource( 2 )]
 margin_top = 0.0
-margin_right = 439.0
-margin_bottom = 60.0
+margin_right = 385.0
+margin_bottom = 64.0
 
 [node name="FriendList" type="VBoxContainer" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="1"]
-margin_top = 90.0
-margin_right = 439.0
-margin_bottom = 395.0
+margin_top = 94.0
+margin_right = 385.0
+margin_bottom = 399.0
 custom_constants/separation = 40
 
 [node name="Friend" type="HBoxContainer" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList" index="0"]
-margin_right = 439.0
+margin_right = 385.0
 margin_bottom = 75.0
+custom_constants/separation = -50
 
 [node name="DeadlyDino" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend" index="0" instance=ExtResource( 3 )]
 
 [node name="FriendLabel" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend" index="1" instance=ExtResource( 8 )]
-margin_left = 79.0
+margin_left = 25.0
 margin_top = 0.0
-margin_right = 439.0
+margin_right = 385.0
 margin_bottom = 75.0
 
 [node name="Friend2" type="HBoxContainer" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList" index="1"]
 margin_top = 115.0
-margin_right = 439.0
+margin_right = 385.0
 margin_bottom = 190.0
+custom_constants/separation = -50
 
 [node name="CharacterIcon" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend2" index="0" instance=ExtResource( 6 )]
 
 [node name="FriendLabel" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend2" index="1" instance=ExtResource( 9 )]
-margin_left = 79.0
+margin_left = 25.0
 margin_top = 0.0
-margin_right = 439.0
+margin_right = 385.0
 margin_bottom = 75.0
 
 [node name="Friend3" type="HBoxContainer" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList" index="2"]
 margin_top = 230.0
-margin_right = 439.0
+margin_right = 385.0
 margin_bottom = 305.0
+custom_constants/separation = -50
 
 [node name="RRIcon" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend3" index="0" instance=ExtResource( 7 )]
 
 [node name="FriendLabel" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend3" index="1" instance=ExtResource( 10 )]
-margin_left = 79.0
+margin_left = 25.0
 margin_top = 0.0
-margin_right = 439.0
+margin_right = 385.0
 margin_bottom = 75.0
 
 [node name="Back" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="2" instance=ExtResource( 4 )]
-margin_top = 425.0
-margin_right = 439.0
-margin_bottom = 485.0
+margin_top = 429.0
+margin_right = 385.0
+margin_bottom = 489.0
+
+[node name="Control" type="Control" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options" index="3"]
+margin_top = 519.0
+margin_right = 385.0
+margin_bottom = 519.0
+
+[node name="AddButton" parent="Background/ScreenContainer/MarginContainer/MarginContainer/Options/Control" index="0" instance=ExtResource( 11 )]
+margin_left = 250.0
+margin_right = 352.0
+align = 2
 [connection signal="pressed" from="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend/FriendLabel" to="." method="_on_FriendLabel_pressed"]
 [connection signal="pressed" from="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend2/FriendLabel" to="." method="_on_FriendLabel_pressed"]
 [connection signal="pressed" from="Background/ScreenContainer/MarginContainer/MarginContainer/Options/FriendList/Friend3/FriendLabel" to="." method="_on_FriendLabel_pressed"]
