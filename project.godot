@@ -23,7 +23,6 @@ config/windows_native_icon="res://textures/virtual companion.ico"
 [display]
 
 window/size/width=350
-window/size/resizable=false
 window/size/always_on_top=true
 window/handheld/orientation="portrait"
 

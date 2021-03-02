@@ -7,7 +7,7 @@
 [ext_resource path="res://Model/Labels/Friends.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Model/Labels/Settings.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Model/Labels/About.tscn" type="PackedScene" id=7]
-[ext_resource path="res://textures/virtual companion.JPG" type="Texture" id=8]
+[ext_resource path="res://textures/qualle.JPG" type="Texture" id=8]
 
 [node name="TemplateScreen" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
@@ -40,10 +40,10 @@ margin_bottom = 584.0
 
 [node name="TextureRect" type="TextureRect" parent="." index="1"]
 margin_left = 100.0
-margin_top = 5.0
-margin_right = 509.0
-margin_bottom = 399.0
-rect_scale = Vector2( 0.35, 0.35 )
+margin_top = 20.0
+margin_right = 393.0
+margin_bottom = 248.0
+rect_scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
